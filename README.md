@@ -1,29 +1,22 @@
 # Subdomain-Checker
-A fast, concurrent Python tool for verifying live subdomains. Essential for bug bounty recon and penetration testing.
 
 
-Install the required dependencies:
+A fast, concurrent Python script to verify live subdomains from a given list. Essential for bug bounty reconnaissance and penetration testing.
 
-Bash
-pip install requests
-Usage
-Create a file named subdomains.txt in the same directory as the script.
+## Features
+- **Fast & Concurrent:** Uses Python's `ThreadPoolExecutor` to check multiple subdomains simultaneously.
+- **Smart Protocol Handling:** Automatically attempts HTTP first, and falls back to HTTPS if HTTP fails.
+- **Clean Input Parsing:** Automatically strips `http://` or `https://` from the input file if present.
+- **Clean Output:** Saves only the active, reachable subdomains to a new text file.
+- **Error Tolerant:** Ignores SSL errors (`verify=False`), follows redirects, and suppresses insecure request warnings to keep terminal output clean.
 
-Add your list of subdomains to subdomains.txt (one per line).
+## Prerequisites
+- Python 3.6+
+- `requests` library
 
-Run the script:
+## Installation
 
-Bash
-python main.py
-The script will output the live subdomains to the console and save them to live_subdomains.txt.
-
-Configuration
-You can easily adjust the script's behavior by modifying the variables at the top of the file:
-
-INPUT_FILE: Name of the file containing subdomains to check (default: subdomains.txt)
-
-OUTPUT_FILE: Name of the file to save live subdomains (default: live_subdomains.txt)
-
-TIMEOUT: Seconds to wait before giving up on a host (default: 5)
-
-THREADS: Number of subdomains to check concurrently (default: 20)
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/yourusername/SubProbe.git](https://github.com/yourusername/SubProbe.git)
+   cd SubProbe
