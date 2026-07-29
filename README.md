@@ -14,9 +14,4 @@ A fast, concurrent Python script to verify live subdomains from a given list. Es
 - Python 3.6+
 - `requests` library
 
-## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/yourusername/SubProbe.git](https://github.com/yourusername/SubProbe.git)
-   cd SubProbe
